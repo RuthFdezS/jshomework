@@ -4,6 +4,7 @@ $(document).ready(function(){
 	if(!document.createElement('video').canPlayType){
 		$('#controls').hide();
 
+		alert("Su navegador no soporta html5");
 		return;
 	}
 
