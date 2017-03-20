@@ -16,7 +16,7 @@ $(document).ready(function(){
 		
 		if (video.paused) {
 			video.play();
-			$(iconPlay).removeClass('fa fa-play');
+			iconPlay.removeClass('fa fa-play');
 			$(this).addClass('fa fa-pause');
 
 		} else if(video.play) {
@@ -35,24 +35,21 @@ $(document).ready(function(){
 
 	//mute and unmute audio
 	var iconVolumen = $('#icon-volume').addClass('fa fa-volume-up');
-	// 
+	
 	//Setting the value of the video tag
 	$(video).prop('mute', true);
 
 	$('#volume-control').bind('click', function(){
 
 		if( $(video).prop('muted') ){
-			
 			$(video).prop('muted', false);
 
 		} else {
 			
 			$(video).prop('muted', true);
-			
+
 		}	
 	
 	});
 	
 });
-
-//( $(video).prop('mute', false)
