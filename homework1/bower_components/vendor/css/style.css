@@ -57,7 +57,7 @@ h1.lead {
 	float: left;
 }
 
-.button#current-time {
+#time.button {
 	float: right;
 	width: 100px;
 	background-color: white;
