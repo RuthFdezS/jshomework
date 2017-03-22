@@ -1,0 +1,21 @@
+Create a canvas animation according to the following requirements:
+
+1.Use the assets provided to work on this practice.
+2.Use the night.jpg as reference to create the animation.
+
+3.The sky should be added as a gradient, with the colors #001848 and #301860
+4.Animate the moon on an linear movement form behind the mountains to the top of the sky.
+5.The animation should never stop.
+6.Provide a fallback image for older browsers.
+
+Pasos:
+0 - Estructura Canvas (German)
+1. Crear el fondo usando el gradiente: #001848 and #301860 (German)
+2. Crear las montañas (No es necesario que se vean igules, pero como sugerencia pueden usar el ejemplo de https://aiu.virtualclassroom.accenture.com/mod/lesson/view.php?id=18623&pageid=451) (Maria)
+3. Crear las estrellas (se puede hacer un Patterns) (Fabian)
+4. Dibujar la luna (Ruth)
+5. Animar la luna: (Maynor y todos) 
+				- Animar la lunar que pase por detras de las montañas.
+				- La animacion no pare, tenga un loop. 
+
+6. Soporte para los browsers que no puedan reproducir canvas. (German)
