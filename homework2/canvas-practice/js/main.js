@@ -62,7 +62,7 @@ function createMoon(){
 function drawMoon() {
 
 	context.save();
-	context.scale(0.5, 0.5);
+	context.scale(0.4, 0.4);
 	context.drawImage(moon, 400, 70, 88, 84);
 	context.restore();
 }
