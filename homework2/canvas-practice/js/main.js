@@ -2,7 +2,7 @@ window.onload = function() {
 	init();
 };
 
-var contenedor, canvas, context, imageObj;
+var contenedor, canvas, context, mountain;
 var texto = document.getElementById('alert');
 
 function init() {
@@ -11,7 +11,7 @@ function init() {
 
 		if (Modernizr.canvas) {
 
-			texto.innerHTML = 'Your browser support HTML5 canvas';
+			texto.innerHTML = ': Your browser support HTML5 canvas';
 
 			canvas = document.createElement('canvas');
 			
@@ -33,7 +33,7 @@ function init() {
 			
 		} else {
 
-			texto.innerHTML = ':Your browser does not support HTML5 canvas ';
+			texto.innerHTML = ': Your browser does not support HTML5 canvas ';
 			fallBackImage();
 		
 		}	
@@ -43,10 +43,10 @@ function crearImagen() {
 
 	var _self = this;
 
-	imageObj = new Image();
-	imageObj.src = "assets/mountains.png";
+	mountain = new Image();
+	mountain.src = "assets/mountains.png";
 	
-	imageObj.onload = function() {
+	mountain.onload = function() {
 		_self.dibujarImagen();
 	}
 }
@@ -55,7 +55,7 @@ function dibujarImagen() {
 
 	context.save();
 	context.scale(0.4, 0.4);
-	context.drawImage(imageObj, 0, 75, 750, 300);
+	context.drawImage(mountain, 0, 75, 750, 300);
 	context.restore();
 }
 
