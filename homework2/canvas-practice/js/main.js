@@ -2,7 +2,7 @@ window.onload = function() {
 	init();
 };
 
-var contenedor, canvas, context, mountain;
+var contenedor, canvas, context, moon;
 var texto = document.getElementById('alert');
 
 function init() {
@@ -12,12 +12,12 @@ function init() {
 		if (Modernizr.canvas) {
 
 			texto.innerHTML = ': Your browser support HTML5 canvas';
-
+			//Creacion del canvas
 			canvas = document.createElement('canvas');
 			
 			context = canvas.getContext('2d');
 			context.clearRect(0,0,720,300);
-			
+			//Creacion del fondo
 			var sky = context.createLinearGradient(0,0,0,150);
 			sky.addColorStop(0, '#001848');
 			sky.addColorStop(1, '#301860');
@@ -27,7 +27,8 @@ function init() {
 
 			contenedor.appendChild(canvas);
 
-			
+			// Llamado hacia otras funciones.
+			callFunctions();
 
 			
 		} else {
@@ -38,6 +39,35 @@ function init() {
 		}	
 };
 
+function callFunctions(){
+	//Funciones de la luna Nota: Estas dos funciones tienen que ir antes que las funciones de las montañas para que la 
+	// pase por detrás de las montañas. 
+	createMoon();
+	drawMoon();
+}
+
+// Luna
+function createMoon(){
+	var _self = this;
+
+	moon = new Image();
+	moon.src = "assets/moon.png";
+	
+	moon.onload = function() {
+		_self.drawMoon();
+	}
+
+}
+
+function drawMoon() {
+
+	context.save();
+	context.scale(0.5, 0.5);
+	context.drawImage(moon, 400, 70, 88, 84);
+	context.restore();
+}
+
+//Imagen de soporte 
 
 function fallBackImage() {
 
