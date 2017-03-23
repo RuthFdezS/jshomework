@@ -25,6 +25,13 @@ article {
     border-right: 1px solid #f5f5f5;
 }
 
+article canvas {
+	width: 720px;
+	height: 300px;
+	margin: 0 auto;
+	display: block;
+}
+
 footer {
     width: 70%;
     max-width: 920px;
@@ -35,23 +42,4 @@ footer {
     font-weight: bold;
     background-color: #f5f5f5;
 }
-
-article canvas {
-	width: 720px;
-	height: 300px;
-	margin: 0 auto;
-	display: block;
-	border: 1px solid blue;
-}
-
-// #container {
-// 	max-width: 920px;
-//     min-height: 500px;
-// 	// width: 1200px;
-// 	// height: 300px;
-// 	// margin: 0 auto;
-// 	border: 1px solid black;
-// 	text-align: center;
-// 	padding: 20px;
-// }
 
