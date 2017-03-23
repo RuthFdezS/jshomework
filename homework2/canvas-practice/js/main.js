@@ -12,11 +12,12 @@ function init() {
 		if (Modernizr.canvas) {
 
 			texto.innerHTML = ': Your browser support HTML5 canvas';
+
 			//Creacion del canvas
 			canvas = document.createElement('canvas');
-			
 			context = canvas.getContext('2d');
 			context.clearRect(0,0,720,300);
+
 			//Creacion del fondo
 			var sky = context.createLinearGradient(0,0,0,150);
 			sky.addColorStop(0, '#001848');
@@ -27,10 +28,9 @@ function init() {
 
 			contenedor.appendChild(canvas);
 
-			// Llamado hacia otras funciones.
+			//Llamado hacia otras funciones.
 			callFunctions();
 
-			
 		} else {
 
 			texto.innerHTML = ': Your browser does not support HTML5 canvas ';
@@ -39,26 +39,32 @@ function init() {
 		}	
 };
 
+
+//callFunctions
 function callFunctions(){
-	//Funciones de la luna Nota: Estas dos funciones tienen que ir antes que las funciones de las montañas para que la 
-	// pase por detrás de las montañas. 
+
+	//Funciones de la luna Nota: Estas dos funciones tienen que ir
+	//antes que las funciones de las montañas para que la 
+	//pase por detrás de las montañas. 
+
 	createMoon();
 	drawMoon();
 }
 
-// Luna
+//Moon
 function createMoon(){
+
 	var _self = this;
 
 	moon = new Image();
 	moon.src = "assets/moon.png";
-	
 	moon.onload = function() {
 		_self.drawMoon();
 	}
 
 }
 
+//drawMoon
 function drawMoon() {
 
 	context.save();
@@ -67,7 +73,7 @@ function drawMoon() {
 	context.restore();
 }
 
-//Imagen de soporte 
+//fallBackImage 
 
 function fallBackImage() {
 
