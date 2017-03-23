@@ -27,8 +27,7 @@ function init() {
 
 			contenedor.appendChild(canvas);
 
-			crearImagen();
-			dibujarImagen();
+			
 
 			
 		} else {
@@ -39,25 +38,6 @@ function init() {
 		}	
 };
 
-function crearImagen() {
-
-	var _self = this;
-
-	mountain = new Image();
-	mountain.src = "assets/mountains.png";
-	
-	mountain.onload = function() {
-		_self.dibujarImagen();
-	}
-}
-
-function dibujarImagen() {
-
-	context.save();
-	context.scale(0.4, 0.4);
-	context.drawImage(mountain, 0, 75, 750, 300);
-	context.restore();
-}
 
 function fallBackImage() {
 
