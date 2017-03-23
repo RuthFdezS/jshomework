@@ -7,36 +7,36 @@ var texto = document.getElementById('alert');
 
 function init() {
 
-	 	contenedor = document.getElementById('container');
+ 	contenedor = document.getElementById('container');
 
-		if (Modernizr.canvas) {
+	if (Modernizr.canvas) {
 
-			texto.innerHTML = ': Your browser support HTML5 canvas';
+		texto.innerHTML = ': Your browser support HTML5 canvas';
 
-			//Creacion del canvas
-			canvas = document.createElement('canvas');
-			context = canvas.getContext('2d');
-			context.clearRect(0,0,720,300);
+		//Creacion del canvas
+		canvas = document.createElement('canvas');
+		context = canvas.getContext('2d');
+		context.clearRect(0,0,720,300);
 
-			//Creacion del fondo
-			var sky = context.createLinearGradient(0,0,0,150);
-			sky.addColorStop(0, '#001848');
-			sky.addColorStop(1, '#301860');
+		//Creacion del fondo
+		var sky = context.createLinearGradient(0,0,0,150);
+		sky.addColorStop(0, '#001848');
+		sky.addColorStop(1, '#301860');
 
-			context.fillStyle = sky;
-			context.fillRect(0,0,720,300);
+		context.fillStyle = sky;
+		context.fillRect(0,0,720,300);
 
-			contenedor.appendChild(canvas);
+		contenedor.appendChild(canvas);
 
-			//Llamado hacia otras funciones.
-			callFunctions();
+		//Llamado hacia otras funciones.
+		callFunctions();
 
-		} else {
+	} else {
 
-			texto.innerHTML = ': Your browser does not support HTML5 canvas ';
-			fallBackImage();
-		
-		}	
+		texto.innerHTML = ': Your browser does not support HTML5 canvas ';
+		fallBackImage();
+	
+	}	
 };
 
 
