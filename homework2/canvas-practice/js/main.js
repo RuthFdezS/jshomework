@@ -3,6 +3,7 @@ window.onload = function() {
 };
 
 var contenedor, canvas, context, sky, mountain, posLunaX, posLunaY;
+
 var texto = document.getElementById('alert');
 
 var requestAnimationFrame = window.requestAnimationFrame || 
@@ -33,6 +34,8 @@ function init() {
 
 		contenedor.appendChild(canvas);
 
+		posLunaX=100;
+		posLunaY=canvas.height;
 		//Llamado hacia otras funciones.
 		callFunctions();
 
@@ -53,9 +56,7 @@ function callFunctions() {
 	//pase por detrás de las montañas. 
 
 	createMoon();
-	posLunaX = 100;
-	posLunaY = canvas.height;
-	drawMoon();
+	moveMoon();
 }
 
 //Moon
@@ -71,22 +72,31 @@ function createMoon() {
 
 }
 
-//drawMoon
-function drawMoon() {
+//moveMoon
+function moveMoon() {
+
+	context.save();
+	context.restore();
 	
 	context.fillRect(0, 0, canvas.width, canvas.height);
-	context.drawImage(moon, posLunaX, posLunaY, 60, 36);
+	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
+	
+	if(posLunaY < -20){
+		context.globalAlpha=0.4;
+	} else{
+		context.globalAlpha=1;
+	}
 
-	if(posLunaY == 20){
-    	posLunaY = canvas.height;
-    	posLunaX = 100;
+	if(posLunaY== -30){
+    	posLunaY=canvas.height;
+    	posLunaX=100;
     }else{
-    	posLunaX += 2;
-    	posLunaY -= 2;
+    	posLunaX+=1;
+    	posLunaY-=1;
      }
 
 	 setTimeout(function(){
-    	requestAnimationFrame(drawMoon);
+    	requestAnimationFrame(moveMoon);
 	}, 100);
 
 }
