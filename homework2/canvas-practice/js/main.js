@@ -2,7 +2,7 @@ window.onload = function() {
 	init();
 };
 
-var contenedor, canvas, context, sky, mountain, posLunaX, posLunaY;
+var contenedor, canvas, context, sky, mountain, posLunaX, posLunaY, stars;
 
 var texto = document.getElementById('alert');
 
@@ -48,6 +48,28 @@ function init() {
 };
 
 
+
+function createStars() {
+
+	var _self = this;
+
+	stars = new Image();
+	stars.src = "assets/stars.png";
+	stars.onload = function() {
+		_self.drawStars();
+	}
+
+}
+
+
+function drawStars() {
+	context.save();
+	context.scale(0.4, 0.4);
+	context.drawImage(stars, 0, 75, 720, 300);
+	context.restore();
+}
+
+
 //callFunctions
 function callFunctions() {
 
@@ -55,6 +77,7 @@ function callFunctions() {
 	//antes que las funciones de las montañas para que la 
 	//pase por detrás de las montañas. 
 	//Estrellas
+	createStars();
 	
 	//Luna
 	createMoon();
@@ -82,6 +105,8 @@ function moveMoon() {
 	context.save();
 	context.restore();
 	
+	_self.drawStars();
+
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
 	
@@ -101,7 +126,9 @@ function moveMoon() {
 
 	 setTimeout(function(){
     	requestAnimationFrame(moveMoon);
+
 	}, 100);
+	 
 
 }
 
