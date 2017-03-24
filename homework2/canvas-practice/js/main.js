@@ -2,7 +2,7 @@ window.onload = function() {
 	init();
 };
 
-var contenedor, canvas, context, mountain,posLunaX,posLunaY;
+var contenedor, canvas, context, sky, mountain, posLunaX, posLunaY;
 var texto = document.getElementById('alert');
 
 var requestAnimationFrame = window.requestAnimationFrame || 
@@ -24,7 +24,7 @@ function init() {
 		context.clearRect(0,0,720,300);
 
 		//Creacion del fondo
-		var sky = context.createLinearGradient(0,0,0,150);
+		sky = context.createLinearGradient(0,0,0,150);
 		sky.addColorStop(0, '#001848');
 		sky.addColorStop(1, '#301860');
 
@@ -46,20 +46,20 @@ function init() {
 
 
 //callFunctions
-function callFunctions(){
+function callFunctions() {
 
 	//Funciones de la luna Nota: Estas dos funciones tienen que ir
 	//antes que las funciones de las montañas para que la 
 	//pase por detrás de las montañas. 
 
 	createMoon();
-	posLunaX=100;
-	posLunaY=canvas.height;
+	posLunaX = 100;
+	posLunaY = canvas.height;
 	drawMoon();
 }
 
 //Moon
-function createMoon(){
+function createMoon() {
 
 	var _self = this;
 
@@ -77,12 +77,12 @@ function drawMoon() {
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.drawImage(moon, posLunaX, posLunaY, 60, 36);
 
-	if(posLunaY==20){
-    	posLunaY=canvas.height;
-    	posLunaX=100;
+	if(posLunaY == 20){
+    	posLunaY = canvas.height;
+    	posLunaX = 100;
     }else{
-    	posLunaX+=2;
-    	posLunaY-=2;
+    	posLunaX += 2;
+    	posLunaY -= 2;
      }
 
 	 setTimeout(function(){
