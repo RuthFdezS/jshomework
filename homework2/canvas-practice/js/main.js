@@ -54,9 +54,13 @@ function callFunctions() {
 	//Funciones de la luna Nota: Estas dos funciones tienen que ir
 	//antes que las funciones de las montañas para que la 
 	//pase por detrás de las montañas. 
-
+	//Estrellas
+	
+	//Luna
 	createMoon();
 	moveMoon();
+
+	//Montañas
 }
 
 //Moon
@@ -82,7 +86,7 @@ function moveMoon() {
 	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
 	
 	if(posLunaY < -20){
-		context.globalAlpha=0.4;
+		context.globalAlpha=0.3;
 	} else{
 		context.globalAlpha=1;
 	}
