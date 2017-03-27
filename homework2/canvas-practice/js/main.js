@@ -34,8 +34,8 @@ function init() {
 
 		contenedor.appendChild(canvas);
 
-		posLunaX=100;
-		posLunaY=canvas.height;
+		posLunaX = 100;
+		posLunaY = canvas.height;
 		//Llamado hacia otras funciones.
 		callFunctions();
 
@@ -47,54 +47,45 @@ function init() {
 	}	
 };
 
+//callFunctions
+function callFunctions() {
+	//Funciones de la luna Nota: Estas dos funciones tienen que ir
+	//antes que las funciones de las montañas para que la 
+	//pase por detrás de las montañas. 
+
+	//Estrellas
+	createStars();
+	drawStars();
+	
+	//Luna
+	createMoon();
+	moveMoon();
+}
 
 
 function createStars() {
-
 	var _self = this;
-
 	stars = new Image();
 	stars.src = "assets/stars.png";
 	stars.onload = function() {
 		_self.drawStars();
 	}
-
 }
-
 
 function drawStars() {
 	context.save();
 	context.scale(0.4, 0.4);
-	context.drawImage(stars, 0, 75, 720, 300);
+	context.drawImage(stars, 0, 0, 720, 300);
 	context.restore();
-}
-
-
-//callFunctions
-function callFunctions() {
-
-	//Funciones de la luna Nota: Estas dos funciones tienen que ir
-	//antes que las funciones de las montañas para que la 
-	//pase por detrás de las montañas. 
-	//Estrellas
-	createStars();
-	
-	//Luna
-	createMoon();
-	moveMoon();
-
-	//Montañas
 }
 
 //Moon
 function createMoon() {
-
 	var _self = this;
-
 	moon = new Image();
 	moon.src = "assets/moon.png";
 	moon.onload = function() {
-		_self.drawMoon();
+		_self.moveMoon();
 	}
 
 }
@@ -103,23 +94,21 @@ function createMoon() {
 function moveMoon() {
 
 	context.save();
-	context.restore();
-	
-	_self.drawStars();
+	// _self.drawStars();
 
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
 	
-	if(posLunaY < -20){
+	if (posLunaY < -20) {
 		context.globalAlpha=0.3;
-	} else{
+	} else {
 		context.globalAlpha=1;
 	}
 
-	if(posLunaY== -30){
+	if (posLunaY== -30) {
     	posLunaY=canvas.height;
     	posLunaX=100;
-    }else{
+    } else {
     	posLunaX+=1;
     	posLunaY-=1;
      }
@@ -128,8 +117,8 @@ function moveMoon() {
     	requestAnimationFrame(moveMoon);
 
 	}, 100);
-	 
 
+	context.restore(); 
 }
 
 //fallBackImage 
