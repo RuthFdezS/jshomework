@@ -60,6 +60,9 @@ function callFunctions() {
 	//Luna
 	createMoon();
 	moveMoon();
+	
+	//mountain
+	Mountain();
 }
 
 
@@ -120,6 +123,18 @@ function moveMoon() {
 
 	context.restore(); 
 }
+
+function Mountain(){
+	  context.save();
+		mountain = new Image();
+		mountain.src = 'assets/mountains.png';
+		mountain.onload = function(){
+		context.drawImage(mountain,0,0);
+	    }
+		
+        context.drawImage(mountain,0, 0);
+       	context.restore();
+	}
 
 //fallBackImage 
 
