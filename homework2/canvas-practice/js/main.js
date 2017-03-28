@@ -49,10 +49,7 @@ function init() {
 
 //callFunctions
 function callFunctions() {
-	//Funciones de la luna Nota: Estas dos funciones tienen que ir
-	//antes que las funciones de las montañas para que la 
-	//pase por detrás de las montañas. 
-
+	
 	//Estrellas
 	createStars();
 	drawStars();
@@ -60,9 +57,6 @@ function callFunctions() {
 	//Luna
 	createMoon();
 	moveMoon();
-	
-	//mountain
-	Mountain();
 }
 
 
@@ -90,7 +84,6 @@ function createMoon() {
 	moon.onload = function() {
 		_self.moveMoon();
 	}
-
 }
 
 //moveMoon
@@ -99,14 +92,14 @@ function moveMoon() {
 	context.save();
 	// _self.drawStars();
 
-	context.fillRect(0, 0, canvas.width, canvas.height);
+	//context.fillRect(0, 0, canvas.width, canvas.height);
 	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
 	
-	if (posLunaY < -20) {
-		context.globalAlpha=0.3;
-	} else {
-		context.globalAlpha=1;
-	}
+	// if (posLunaY < -20) {
+	// 	context.globalAlpha=0.3;
+	// } else {
+	// 	context.globalAlpha=1;
+	// }
 
 	if (posLunaY== -30) {
     	posLunaY=canvas.height;
@@ -116,6 +109,10 @@ function moveMoon() {
     	posLunaY-=1;
      }
 
+     //mountain
+	createMountains();
+	drawMountains();
+
 	 setTimeout(function(){
     	requestAnimationFrame(moveMoon);
 
@@ -124,17 +121,25 @@ function moveMoon() {
 	context.restore(); 
 }
 
-function Mountain(){
-	  context.save();
-		mountain = new Image();
-		mountain.src = 'assets/mountains.png';
-		mountain.onload = function(){
-		context.drawImage(mountain,0,0);
-	    }
-		
-        context.drawImage(mountain,0, 0);
-       	context.restore();
+function createMountains() {
+
+	var _self = this;
+
+	mountain = new Image();
+	mountain.src = 'assets/mountains.png';
+
+	mountain.onload = function() {
+		_self.drawMountains();
 	}
+
+}
+
+function drawMountains() {
+	context.save();
+	context.scale(0.4, 0.4);
+	context.drawImage(mountain, 0, 75, 750, 300);
+	context.restore();
+} 
 
 //fallBackImage 
 
