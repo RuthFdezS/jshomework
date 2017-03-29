@@ -92,7 +92,8 @@ function moveMoon() {
 	context.save();
 	// _self.drawStars();
 
-	//context.fillRect(0, 0, canvas.width, canvas.height);
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	drawStars();
 	context.drawImage(moon, posLunaX, posLunaY, 50, 48);
 	
 	// if (posLunaY < -20) {
@@ -109,6 +110,7 @@ function moveMoon() {
     	posLunaY-=1;
      }
 
+    
      //mountain
 	createMountains();
 	drawMountains();
