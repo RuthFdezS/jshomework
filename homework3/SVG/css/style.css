@@ -1,0 +1,16 @@
+
+body{
+				margin: 0;
+				padding: 0;
+				<!--background: #b7bf76;-->
+				overflow: hidden;
+}
+			
+			svg{
+				display: block;
+				margin: auto;
+				-webkit-transform-origin: top center;
+				-webkit-transform: scale(1.5);
+				-moz-transform-origin: top center;
+				-moz-transform: scale(1.5);
+			}
