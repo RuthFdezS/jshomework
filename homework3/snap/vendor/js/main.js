@@ -30,10 +30,15 @@ function init(){
 function createBackground(){	
 		rect = mySvg.rect(0,0,'100%','100%');
 		g = mySvg.gradient('l(0,0,0,1)#001848-#301860');
-
+		
 		rect.attr({
 			fill: g
 		});
+
+		//Inserta las montañas
+		var mountain = document.getElementById("mountain");
+		rect.insertBefore(mountain);
+
 }
 
 function createMoon() {
@@ -43,12 +48,13 @@ function createMoon() {
 		stroke: "#E8E4DD",
 		strokeWidth: 3
 	});
+
 	// moon.addClass('moon');
 }
 
 function animate(){	
 	animateMoon();		
-
+	rect.after(moon);
 }
 
 function animateMoon(){
@@ -61,6 +67,8 @@ function animateMoon(){
 	moon.animate({cx:a,cy:b},3,function(){
 			animateMoon()
 		});
+
+	
 
 	/*************OTRA FORMA**********************
 	var time
