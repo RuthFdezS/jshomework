@@ -48,3 +48,9 @@ svg {
     margin: 20px auto;
     display: block;
 }
+
+.moon{
+     -webkit-box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
+    -moz-box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
+    box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
+}

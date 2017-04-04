@@ -39,10 +39,12 @@ function createBackground(){
 function createMoon() {
 	moon= mySvg.circle(0,300,50)
 	moon.attr({
-		fill: "green",
-		stroke: "yellow",
-		strokeWidth: 5
+		fill: "white",
+		stroke: "#E8E4DD",
+		strokeWidth: 3
+
 	});
+	moon.addClass('moon');
 }
 
 function animate(){	
