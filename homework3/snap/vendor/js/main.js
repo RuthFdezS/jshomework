@@ -37,14 +37,13 @@ function createBackground(){
 }
 
 function createMoon() {
-	moon= mySvg.circle(0,300,50)
+	moon= mySvg.circle(0,300,50);
 	moon.attr({
 		fill: "white",
 		stroke: "#E8E4DD",
 		strokeWidth: 3
-
 	});
-	moon.addClass('moon');
+	// moon.addClass('moon');
 }
 
 function animate(){	
