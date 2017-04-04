@@ -1,5 +1,11 @@
-var mySvg, rect, g;
+/*********Variables****************/
+var mySvg, rect, g,moon;
 var texto = document.getElementById('alert');
+var a=300
+var b=400
+
+/*********fin Variables****************/
+
 
 window.onload = function(){
 
@@ -8,14 +14,10 @@ window.onload = function(){
 
 function init(){
 	if(Modernizr.svg) {
-
-		mySvg = Snap(720, 300);
-		rect = mySvg.rect(0,0,'100%','100%');
-		g = mySvg.gradient('l(0,0,0,1)#001848-#301860');
-
-		rect.attr({
-			fill: g
-		});
+		mySvg = Snap("#mysvg");
+		createBackground();
+		createMoon();
+		animate();
 
 	} else {
 
@@ -23,6 +25,56 @@ function init(){
  		fallBackImage();
 
 	}
+}
+
+function createBackground(){	
+		rect = mySvg.rect(0,0,'100%','100%');
+		g = mySvg.gradient('l(0,0,0,1)#001848-#301860');
+
+		rect.attr({
+			fill: g
+		});
+}
+
+function createMoon() {
+	moon= mySvg.circle(0,300,50)
+	moon.attr({
+		fill: "green",
+		stroke: "yellow",
+		strokeWidth: 5
+	});
+}
+
+function animate(){	
+	animateMoon();		
+
+}
+
+function animateMoon(){
+	a++
+	b--
+	if(b==-40){// en este punto desaparece totalmente arriba
+		b=400
+		a=200
+	}
+	moon.animate({cx:a,cy:b},3,function(){
+			animateMoon()
+		});
+
+	/*************OTRA FORMA**********************
+	var time
+	if(b==-40){// en este punto desaparece totalmente arriba
+		b=400
+		a=200
+		time=1
+	}else{
+		b=-40
+		a=650
+		time=3000
+	}
+	moon.animate({cx:a,cy:b},time,function(){
+			animateMoon()
+		});*/
 }
 
 function fallBackImage() {
