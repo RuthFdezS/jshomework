@@ -1,0 +1,8 @@
+Create an animation with SVG graphics according to the following requirements:
+
+Investigate about http://velocityjs.org/ and http://snapsvg.io/ and choose one for animating the SVG graphics.
+Use the night.jpg as reference to create the animation.
+Draw the necessary elements using basic shapes.
+The sky should be added as a gradient, with the colors #001848 and #301860
+Animate the moon on an linear movement form behind the mountains to the top of the sky.
+Make the stars blink.
