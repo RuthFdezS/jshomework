@@ -1,0 +1,11 @@
+Use the assets provided to work on this practice
+Use Google maps API to add a map and display stores and user's location.
+Zoom level must be set to 16.
+Use the supermarket.png icon to display stores location in the map.
+Use the male-2.png icon to display the user's current location.
+Center the map on the user's location
+If the user's location is not available center the map to the main client's store.
+
+Grunt file - espacio del mapa, y el API del mapa: German
+Ubicacion del Usuario: Maynor
+Marcadores de los supermercados: Ruth, Fabian y Maria (1 cada uno)
