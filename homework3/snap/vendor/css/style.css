@@ -53,4 +53,17 @@ svg {
      -webkit-box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
     -moz-box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
     box-shadow: -1px 5px 41px 20px rgba(245,223,245,0.77);
+    z-index: 2;
+}
+
+#stars{
+    z-index: 3;
+}
+
+.starsAppear{
+    display: block;
+}
+
+.starsDisappear{
+    display: none;
 }

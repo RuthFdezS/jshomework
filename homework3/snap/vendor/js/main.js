@@ -18,6 +18,7 @@ function init(){
 		createBackground();
 		createMoon();
 		animate();
+		animateStars();
 
 	} else {
 
@@ -55,6 +56,16 @@ function createMoon() {
 function animate(){	
 	animateMoon();		
 	rect.after(moon);
+	rect.after(stars);
+}
+
+function animateStars(){
+	var stars = document.getElementById("stars");
+	stars.removeClass("starsAppear");
+	mina.easeinout(stars);
+	
+	stars.addClass("starsDisappear");
+	mina.easein(stars);
 }
 
 function animateMoon(){
