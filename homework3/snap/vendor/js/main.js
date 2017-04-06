@@ -1,9 +1,9 @@
 /*********Variables****************/
-var mySvg, rect, g,moon;
+var mySvg, rect, g,moon,opacidad;
 var texto = document.getElementById('alert');
 var a=300
 var b=400
-
+var star = true
 /*********fin Variables****************/
 
 
@@ -17,8 +17,7 @@ function init(){
 		mySvg = Snap("#mysvg");
 		createBackground();
 		createMoon();
-		animate();
-		animateStars();
+		animate();		
 
 	} else {
 
@@ -49,23 +48,29 @@ function createMoon() {
 		stroke: "#E8E4DD",
 		strokeWidth: 3
 	});
-
-	// moon.addClass('moon');
 }
 
 function animate(){	
 	animateMoon();		
 	rect.after(moon);
 	rect.after(stars);
+	animateStars();
 }
 
+
 function animateStars(){
-	var stars = document.getElementById("stars");
-	stars.removeClass("starsAppear");
-	mina.easeinout(stars);
-	
-	stars.addClass("starsDisappear");
-	mina.easein(stars);
+	var stars = Snap(document.getElementById("stars"));
+
+	if(star){
+		opa=0.1
+		star=false
+	}else{
+		opa=1
+		star=true
+	}
+	stars.animate({opacity:opa},3000,function(){		
+			animateStars()			
+	});
 }
 
 function animateMoon(){
@@ -76,10 +81,8 @@ function animateMoon(){
 		a=200
 	}
 	moon.animate({cx:a,cy:b},3,function(){
-			animateMoon()
-		});
-
-	
+			animateMoon()			
+		});	
 
 	/*************OTRA FORMA**********************
 	var time
@@ -102,7 +105,6 @@ function fallBackImage() {
 	fallBackImage = document.createElement('img');
 	fallBackImage.setAttribute('src', "snap/vendor/assets/night.jpg");
 	contenedor.appendChild(fallBackImage);
-
 }
 
 
