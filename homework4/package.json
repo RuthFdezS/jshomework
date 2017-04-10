@@ -1,0 +1,9 @@
+{
+    "name": "local-proyect",
+    "version": "1.0.0",
+    "devDependencies": {
+        "grunt": "~1.0.1",
+        "grunt-contrib-connect": "~1.0.2",
+        "load-grunt-tasks": "~3.5.2"
+    }
+}

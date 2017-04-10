@@ -6,6 +6,5 @@ Use the male-2.png icon to display the user's current location.
 Center the map on the user's location
 If the user's location is not available center the map to the main client's store.
 
-Grunt file - espacio del mapa, y el API del mapa: German
-Ubicacion del Usuario: Maynor
+Grunt file - espacio del mapa, y el API del mapa Ubicacion del Usuario: German
 Marcadores de los supermercados: Ruth, Fabian y Maria (1 cada uno)
