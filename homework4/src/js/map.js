@@ -2,6 +2,14 @@ function init(){
 //NameSpace --> google.maps.attr
 	var divMap = document.getElementById('map');
 	navigator.geolocation.getCurrentPosition( fn_ok , fn_error);
+	//Latitud y longitud del marcador 1
+	var latlng1 = new google.maps.LatLng(9.988555, -84.111999);
+	var marcador1;
+
+	//Imagenes
+	var imageUsuario = "assets/male-2.png";
+	var imageMarcador = "assets/supermarket.png";
+
 	function fn_error(){
 		alert('No pudimos encontrar tu ubicación exacta');
 	}
@@ -24,6 +32,7 @@ function init(){
 		var objConfigUser = {
 			position: glatLon,
 			map: gMap,
+			icon: imageUsuario,
 			title: "usuario"
 			
 		}
@@ -32,7 +41,7 @@ function init(){
 		var gUser = new google.maps.Marker (objConfigUser);
 		
 		//pasa una direccion a coordenadas
-		var gCoder = new google.maps.Geocoder( );
+		var gCoder = new google.maps.Geocoder();
 		
 		// da las propiedades de direccion
 		objdireccion = {
@@ -51,11 +60,20 @@ function init(){
 			var config = {
 				map: gMap,
 				position: coordenadas,
+				icon: imageMarcador,
 				title: "Paseo de las flores"				
 			}
 			
 			//crear nuevo marcador
 			var gMarkerPaseoFL = new google.maps.Marker(config)
-		}		
+		}	
+		// Marcador 1 del Auto Mercado
+		
+		marcador1 = new google.maps.Marker({
+			position: latlng1,
+			map: gMap,
+			icon: imageMarcador,
+			title: "Auto Mercado"
+		})	
 	}
 }	
