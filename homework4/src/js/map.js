@@ -4,7 +4,7 @@ function init(){
 	navigator.geolocation.getCurrentPosition( fn_ok , fn_error);
 	//Latitud y longitud del marcador 1
 	var latlng1 = new google.maps.LatLng(9.988555, -84.111999);
-	var marcador1;
+	var automercado;
 
 	//Imagenes
 	var imageUsuario = "assets/male-2.png";
@@ -69,7 +69,7 @@ function init(){
 		}	
 		// Marcador 1 del Auto Mercado
 		
-		marcador1 = new google.maps.Marker({
+		automercado = new google.maps.Marker({
 			position: latlng1,
 			map: gMap,
 			icon: imageMarcador,
