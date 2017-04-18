@@ -4,7 +4,8 @@ function init(){
 	navigator.geolocation.getCurrentPosition( fn_ok , fn_error);
 	//Latitud y longitud del marcador 1
 	var latlng1 = new google.maps.LatLng(9.988555, -84.111999);
-	var automercado;
+	var latlng2 = new google.maps.LatLng(9.9827947, -84.1077211);
+	var automercado, pricesmart;
 
 	//Imagenes
 	var imageUsuario = "assets/male-2.png";
@@ -74,6 +75,15 @@ function init(){
 			map: gMap,
 			icon: imageMarcador,
 			title: "Auto Mercado"
+		})
+
+		// Marcador 3 del PriceSmart
+		
+		pricesmart = new google.maps.Marker({
+			position: latlng2,
+			map: gMap,
+			icon: imageMarcador,
+			title: "Pricesmart"
 		})	
 	}
 }	
