@@ -59,6 +59,23 @@ function animate(){
 
 
 function animateStars(){
+<<<<<<< .mine
+	var stars = document.getElementById("stars");
+	stars.addClass("starsDisappear");
+	//stars.removeClass("starsAppear");
+	//mina.easeinout(stars);
+	
+	
+	/*stars.addClass("starsDisappear");
+	mina.easein(stars);*/
+||||||| .r60
+	var stars = document.getElementById("stars");
+	stars.removeClass("starsAppear");
+	mina.easeinout(stars);
+	
+	stars.addClass("starsDisappear");
+	mina.easein(stars);
+=======
 	var stars = Snap(document.getElementById("stars"));
 
 	if(star){
@@ -71,6 +88,7 @@ function animateStars(){
 	stars.animate({opacity:opa},3000,function(){		
 			animateStars()			
 	});
+>>>>>>> .r64
 }
 
 function animateMoon(){
